@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
+
+:root {
+    --primary-color: #c72727;
+    --secondary-color: #f98500;
+    --light-color: #f3f3f3;
+    --dark-color: #1f232c;
+    /* --max-width: 1100px; */
+
+    --clr-1: rgb(196, 196, 196);
+}
+.category {
+    --sports-color: #ee7606;
+    --ent-color: #4d07ce;
+    --tech-color: #29ee43;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Staatliches', cursive; */
+    font-family: 'Lato', sans-serif;
+    line-height: 1.4;
+    background: var(--light-color);
+}
+a{
+    color: var(--dark-color);
+    text-decoration: none;
+}
+p{
+    margin: 0.75rem 0;
+}
+ul{
+    list-style: none;
+}
+img{
+    width: 100%;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Staatliches', cursive;
+    margin-bottom: 0.55rem;
+    line-height: 1.3;
+}
+
+/* ================================ Utility ============================= */
+
+.container{
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+.redSpan {
+    color: var(--primary-color);
+}
+.category {
+    display: inline-block;
+    color: white;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    padding: 0.1rem 0.5rem;
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.category-sports {background: var(--sports-color);}
+.category-ent {background: var(--ent-color);}
+.category-tech {background: var(--tech-color);}
+
+.btn {
+    display: inline-block;
+    border: none;
+    background: var(--dark-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+
+    transition: opacity 0.2s ease-in;
+}
+.btn:hover {
+    opacity: 0.95;
+}
+.btn-red {background: var(--primary-color);}
+.btn-white {background: var(--light-color); color: var(--dark-color);}
+.btn-yellow {background: var(--secondary-color);}
+
+.card {
+    background: white;
+    padding: 1rem;
+}
+
+.bg-dark {
+    background: var(--dark-color);
+    color: #fff;
+}
+.bg-primary {
+    background: var(--primary-color);
+    color: #fff;
+}
+.bg-secondary {
+    background: var(--secondary-color);
+    color: #fff;
+}
+.bg-dark h1, /* Make every heading white*/
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark a,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary a,
+.bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3,
+.bg-secondary a {
+    color: #fff;
+}
+.py-1 { padding: 1.5rem 0 }
+.py-2 { padding: 2rem 0 }
+.py-3 { padding: 3rem 0 }
+.p-half { padding: 0.5rem }
+.p-1 { padding: 1.5rem }
+.p-2 { padding: 2rem }
+.p-3 { padding: 3rem }
+.l-heading { font-size: 3rem; }
+
+
+.list li{
+    padding: 0.5rem 0;
+    border-bottom: #555 dotted 1px;
+    width: 90%;
+}
+.list li:hover{
+    background-color: #2b303b;
+}
+
+/* ===================================  Nav ============================= */
+#main-nav{
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+#main-nav .container{
+    display: grid;
+    grid-template-columns: 6fr 2fr;
+    /* grid-gap: 1rem; */
+    padding: 1rem;
+    align-items: center;
+}
+#main-nav .logo{
+    width: 180px;
+}
+#main-nav ul{
+    justify-self: end;
+    display: flex;
+}
+#main-nav ul li a{
+    padding: 0.75rem;
+    font-weight: bold;
+}
+#main-nav ul li a.curr-page{
+    background-color: var(--primary-color);
+    color: white ;
+}
+#main-nav ul li a:hover{
+    background-color: var(--clr-1);
+    color: var(--dark-color) ;
+}
+/* #main-nav .social-icons{
+    justify-self: center;
+}
+#main-nav .social-icons i{
+    color: var(--clr-1);
+}
+#main-nav .social-icons i:hover{
+    color: var(--dark-color);
+} */
+
+/* Hide dropdown items */
+#main-nav ul li ul {
+    display: none;
+    position: absolute;
+    right: 2%;
+    background-color: #f9f9f9;
+    /* min-width: 160px; */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 5px;
+    z-index: 2;
+
+    /* text-align: center; */
+}
+/* Show dropdown items */
+#main-nav ul li:hover ul{
+    display: block;
+}
+#main-nav ul li ul li{
+    margin-top: 5px;
+    padding: 10px 5px;
+}
+#main-nav ul li ul li a{
+    margin-top: 5px;
+    padding: 10px 30px;
+    width: 250px;
+}
+
+
+
+/* ===================================  Showcase ============================= */
+#showcase {
+    color: white;
+    background: var(--dark-color);
+    padding: 2rem;
+    position: relative;
+}
+#showcase::before {
+    content: '';
+    background: url('/src/stadium.jpg') center center/cover;
+    background-attachment: fixed; /* Makes the parallax effect */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+#showcase .showcase-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+#showcase .showcase-content{
+    z-index: 1;
+}
+
+/* ===================================  Latest News ============================= */
+/* Big Highlights */
+#latest-news{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1rem;
+
+    margin: 2rem;
+}
+#latest-news .highlight{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+#latest-news .highlight .big-highlight img{
+    width: 100%;
+    height: 15rem;
+}
+#latest-news .highlight .new-movies{
+    grid-column: 1 / span 2;
+
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+
+    position: relative;
+
+    padding: 1rem 0;
+    width: 100%;
+}
+#latest-news .highlight .new-movies img{
+    height: 8rem;
+    width: 100%;
+
+    padding-left: 0.7rem;
+}
+
+/* Small List Highlights */
+#latest-news .latest-news-list {
+    display: flex;
+    flex-direction: column;
+}
+#latest-news .latest-news-list ul li{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+}
+#latest-news .latest-news-list ul li img{
+    width: 6rem;
+}
+#latest-news .latest-news-list ul li div{
+    margin: 0 1rem;
+}
+
+
+
+/* ===================================  Articles Grid ============================= */
+#articles{
+    margin-bottom: 3rem;
+}
+#articles .container .article-heading{
+    margin: 2rem 0 2rem 1rem;
+}
+#articles .articles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+#articles .articles-container > *:first-child,
+#articles .articles-container > *:last-child {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 1 / span 2;
+    grid-gap: 1rem;
+
+    align-items: center;
+}
+#articles .articles-container > *:last-child {
+    grid-column: 2 / span 2;
+}
+
+
+
+
+/* ===================================  Pre Footer ============================= */
+
+/* Upper Pre Footer */
+#pre-footer .upper-pre-footer ul{
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    list-style: none;
+}
+#pre-footer .upper-pre-footer ul li{
+    margin: 1rem;
+    padding: 0.6rem 1.5rem;
+
+    font-family: 'Staatliches', cursive;
+}
+/* Lower Pre Footer */
+#pre-footer .lower-pre-footer{
+    display: flex;
+    justify-content: center;
+}
+#pre-footer .lower-pre-footer h2{
+    margin: 1rem;
+}
+#pre-footer .lower-pre-footer form{
+    display: flex;
+    justify-content: center;
+}
+#pre-footer .lower-pre-footer input,
+#pre-footer .lower-pre-footer button{
+    margin: 1rem 0.6rem;
+    width: 100%;
+    padding: 0.5rem;
+}
+#pre-footer .lower-pre-footer input {
+    border: none;
+    background: rgb(209, 209, 209);
+    color: black;
+}
+
+
+/* ===================================  Footer ============================= */
+#main-footer{
+    background: var(--dark-color);
+    color: white;
+}
+#main-footer img {
+    width: 150px;
+}
+#main-footer a {
+    color: white;
+}
+#main-footer .footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid: 1.5rem;
+}
+#main-footer .footer-container div {
+    margin: 2rem 0;
+}
+#main-footer .footer-container div p{
+    padding: 0 5px;
+}
+#main-footer .footer-container > *:last-child {
+    grid-column: 1 / span 4;
+    
+    background-color: #2b303b;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+}
+#main-footer .footer-container input{
+    width: 90%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+#main-footer .footer-container .random-icon{
+    display: flex;
+    justify-content: left;
+}
+#main-footer .footer-container .random-icon img{
+    width: 2rem;
+    margin: 0.3rem;
+
+    transition: 0.1s;
+}
+#main-footer .footer-container .random-icon img:hover{
+    border: white solid 2px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================  Social Icons ============================= */
+.icon-bar {
+    position: fixed;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 3;
+}
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+}
+.icon-bar a:hover {
+    background-color: #000;
+}
+.content {
+    margin-left: 75px;
+    font-size: 30px;
+}
+.facebook {
+    background: #3B5998;
+    color: white;
+}
+.twitter {
+    background: #55ACEE;
+    color: white;
+}
+.google {
+    background: #dd4b39;
+    color: white;
+}
+.linkedin {
+    background: #007bb5;
+    color: white;
+}
+.youtube {
+    background: #bb0000;
+    color: white;
+}
