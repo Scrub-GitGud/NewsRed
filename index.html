@@ -26,7 +26,7 @@
                 <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
             </div> -->
             <ul>
-                <li><a href="index.html" class="curr-page">Home</a></li>
+                <li><a href="#main-nav" class="curr-page">Home</a></li>
                 <!-- <li><a href=""><i class="fas fa-chevron-down"></i> Catagory</a> -->
                 <li><a href="#main-nav">Catagory</a>
                     <ul class="dropdown">
@@ -217,10 +217,10 @@
         </div>
         <div class="lower-pre-footer bg-light">
             <h2>Latest update on marketing tech news and views</h2>
-            <form action="">
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <button type="button" class="btn btn-red">Submit</button>
+            <form name="contact" method="POST" data-netlify="true">
+                <input type="text" placeholder="Name" name="name">
+                <input type="text" placeholder="Message" name="message">
+                <button type="submit" class="btn btn-red">Submit</button>
             </form>
         </div>
     </section>
